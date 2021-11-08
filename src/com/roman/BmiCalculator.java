@@ -18,7 +18,6 @@ public class BmiCalculator {
         } else if(result >= 18.5 && result < 25){
             System.out.println("Normalgewicht");
             return "Normalgewicht";
-
         } else if(result >= 25 && result < 30){
             System.out.println("Uebergewicht");
             return "Uebergewicht";

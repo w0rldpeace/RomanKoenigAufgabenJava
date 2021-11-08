@@ -24,6 +24,7 @@ public class Main {
         int i = sc.nextInt();
         checkEvenNumber(i);*/
 
+        //Frage - Kann man das hier auch irgendwie eleganter loesen?
         Scanner inputHeight = new Scanner(System.in);
         System.out.println("Geben Sie Ihre Groesse in CM an: ");
         double height = inputHeight.nextDouble();
