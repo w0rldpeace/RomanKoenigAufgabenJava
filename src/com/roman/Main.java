@@ -25,16 +25,28 @@ public class Main {
         checkEvenNumber(i);*/
 
         //Frage - Kann man das hier auch irgendwie eleganter loesen?
+
+ /*       //Eingabe Groesse
         Scanner inputHeight = new Scanner(System.in);
         System.out.println("Geben Sie Ihre Groesse in CM an: ");
         double height = inputHeight.nextDouble();
-
+        //Eingabe Gewicht
         Scanner inputWeight = new Scanner(System.in);
         System.out.println("Geben Sie Ihr Gewicht kg an: ");
         double weight = inputWeight.nextDouble();
 
+        //Klasse instanziieren und Methode ausfuehren
         BmiCalculator b = new BmiCalculator();
+        b.calc(height, weight);*/
+        Scanner firstSacnner = new Scanner(System.in);
+        System.out.println("Erste Zahl eingeben: ");
+        int firstNumber = firstSacnner.nextInt();
 
-        b.calc(height, weight);
+        Scanner secondSacnner = new Scanner(System.in);
+        System.out.println("Erste Zahl eingeben: ");
+        int secondNumber = secondSacnner.nextInt();
+
+        LeastCommonMultiple l = new LeastCommonMultiple();
+        l.calculateCommonMultiple(firstNumber, secondNumber);
     }
 }
