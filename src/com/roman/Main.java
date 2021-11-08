@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
+    //Prüft eine Konsoleneingabe ob eine Zahl gerade oder Ungerade ist.
     public static boolean checkEvenNumber(int input){
 
         if(input%2 == 0){
