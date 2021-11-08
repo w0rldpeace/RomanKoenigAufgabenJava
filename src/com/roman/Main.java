@@ -18,9 +18,22 @@ public class Main {
 
     public static void main(String[] args) {
         //System.out.println("Hallo! Ich bin eins Code.");
-        Scanner sc = new Scanner(System.in);
+
+        /*Scanner sc = new Scanner(System.in);
         System.out.println("Geben Sie eine Zahl ein: ");
         int i = sc.nextInt();
-        checkEvenNumber(i);
+        checkEvenNumber(i);*/
+
+        Scanner inputHeight = new Scanner(System.in);
+        System.out.println("Geben Sie Ihre Groesse in CM an: ");
+        double height = inputHeight.nextDouble();
+
+        Scanner inputWeight = new Scanner(System.in);
+        System.out.println("Geben Sie Ihr Gewicht kg an: ");
+        double weight = inputWeight.nextDouble();
+
+        BmiCalculator b = new BmiCalculator();
+
+        b.calc(height, weight);
     }
 }
