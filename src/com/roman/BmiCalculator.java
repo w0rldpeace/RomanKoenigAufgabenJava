@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BmiCalculator {
 
-    public static String calc(double height, double weight){
+    public String calc(double height, double weight){
 
         double result;
         //Groesse in CM

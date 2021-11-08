@@ -6,25 +6,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BmiCalculatorTest {
 
+    BmiCalculator b = new BmiCalculator();
+
     // Muss statisch sein, wieso?
     @Test
     public void shouldMalnourished(){
-        String returnText = BmiCalculator.calc(189, 55);
+        String returnText = b.calc(189, 55);
         assertEquals(returnText, "Untergewicht");
     }
     @Test
     public void shouldNormal(){
-        String returnText = BmiCalculator.calc(180, 80);
+        String returnText = b.calc(180, 80);
         assertEquals(returnText, "Normalgewicht");
     }
     @Test
     public void shouldOverweight(){
-        String returnText = BmiCalculator.calc(170, 80);
+        String returnText = b.calc(170, 80);
         assertEquals(returnText, "Uebergewicht");
     }
     @Test
     public void shouldObese(){
-        String returnText = BmiCalculator.calc(170, 95);
+        String returnText = b.calc(170, 95);
         assertEquals(returnText, "Schweres Uebergewicht");
     }
 }
