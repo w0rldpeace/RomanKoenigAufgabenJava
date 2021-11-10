@@ -17,30 +17,6 @@ public class Point {
         this.name = name;
     }
 
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     //die toString Methode ist hier ueberschrieben und auf meine Felder angewendet per IDE
     @Override
     public String toString() {
@@ -80,5 +56,29 @@ public class Point {
         x = a.getX() / b.getX();
         y = a.getY() / b.getY();
         return new Point(x, y, name);
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

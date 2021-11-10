@@ -2,13 +2,11 @@ package com.point;
 
 public class Vector {
 
-    Double x;
-    Double y;
-    Double z;
-    Double newX, newY, newZ;
+    // x,y,z final machen, division durch null nicht moeglich
+    private Double x;
+    private Double y;
+    private Double z;
     String name;
-    Double scalarProduct;
-    Double vectorLength;
     /**
      * Formel fuer...
      * Skalarprodukt -> xa*xb+ya*yb+za*zb scalarProduct -> return double
@@ -19,7 +17,6 @@ public class Vector {
      * Vektorlaenge -> Wurzel aus x^2 + y^2 + z^2 -> vectorLength -> return double
      *
      *
-
      */
 
     public Vector(){
@@ -62,9 +59,10 @@ public class Vector {
      */
     public Vector add3dVector(Vector a, Vector b, String name){
 
-        newX = a.getX() + b.getX();
-        newY = a.getY() + b.getY();
-        newZ = a.getZ() + b.getZ();
+        //Codereview Deklarierung aus der Klasse in Methode ausgelagert.
+        double newX = a.getX() + b.getX();
+        double newY = a.getY() + b.getY();
+        double newZ = a.getZ() + b.getZ();
 
         return new Vector(newX, newY, newZ, name);
     }
@@ -78,8 +76,8 @@ public class Vector {
      * @return new Vector()
      */
     public Vector add2dVector(Vector a, Vector b, String name){
-        newX = a.getX() + b.getX();
-        newY = a.getY() + b.getY();
+        double newX = a.getX() + b.getX();
+        double newY = a.getY() + b.getY();
 
         return new Vector(newX, newY, name);
     }
@@ -91,10 +89,21 @@ public class Vector {
      * @param name Eindeutiger Name des neuen Vektors
      * @return new Vector();
      */
-    public Vector subtract3dVector(Vector a, Vector b, String name){
-        newX = a.getX() - b.getX();
-        newY = a.getY() - b.getY();
-        newZ = a.getZ() - b.getZ();
+//    public Vector subtract3dVector(Vector a, Vector b, String name){
+//        newX = a.getX() - b.getX();
+//        newY = a.getY() - b.getY();
+//        newZ = a.getZ() - b.getZ();
+//
+//        return new Vector(newX, newY, newZ, name);
+//    }
+
+    /**
+     * Version aus dem Code Review, Fragen nach Unterschied und Vorteile
+     */
+    public static Vector subtract3dVector(Vector a, Vector b, String name){
+        double newX = a.getX() - b.getX();
+        double newY = a.getY() - b.getY();
+        double newZ = a.getZ() - b.getZ();
 
         return new Vector(newX, newY, newZ, name);
     }
@@ -107,8 +116,8 @@ public class Vector {
      * @return new Vector();
      */
     public Vector subtract2dVector(Vector a, Vector b, String name){
-        newX = a.getX() - b.getX();
-        newY = a.getY() - b.getY();
+        double newX = a.getX() - b.getX();
+        double newY = a.getY() - b.getY();
 
         return new Vector(newX, newY, name);
     }
@@ -121,10 +130,11 @@ public class Vector {
      * @return  Skalarprodukt -> double
      */
     public Double scalarProduct(Vector a, Vector b){
+        double scalarProduct;
         if(a.getZ().isNaN() && b.getZ().isNaN()){
-            scalarProduct = a.getX()*b.getX() + a.getY()*b.getY();
+            scalarProduct = a.getX() * b.getX() + a.getY() * b.getY();
         } else {
-            scalarProduct = a.getX()*b.getX() + a.getY()*b.getY() + a.getZ()*b.getZ();
+            scalarProduct = a.getX() * b.getX() + a.getY() * b.getY() + a.getZ() * b.getZ();
         }
         return scalarProduct;
     }
@@ -138,9 +148,9 @@ public class Vector {
      */
     public Vector crossProduct(Vector a, Vector b, String name){
 
-        newX = a.getY()*b.getZ() - a.getZ()*b.getY();
-        newY = a.getZ()*b.getX() - a.getX()*b.getZ();
-        newZ = a.getX()*b.getY() - a.getY()*b.getX();
+        double newX = a.getY()*b.getZ() - a.getZ()*b.getY();
+        double newY = a.getZ()*b.getX() - a.getX()*b.getZ();
+        double newZ = a.getX()*b.getY() - a.getY()*b.getX();
 
         return new Vector(newX, newY, newZ, name);
     }
@@ -154,14 +164,14 @@ public class Vector {
      */
     public Vector scalarMultiplication(Vector a, Double scalar, String name){
         if(a.getZ().isNaN()){
-            newX = a.getX()*scalar;
-            newY = a.getY()*scalar;
+            double newX = a.getX()*scalar;
+            double newY = a.getY()*scalar;
 
             return new Vector(newX, newY, name);
         } else {
-            newX = a.getX()*scalar;
-            newY = a.getY()*scalar;
-            newZ = a.getZ()*scalar;
+            double newX = a.getX()*scalar;
+            double newY = a.getY()*scalar;
+            double newZ = a.getZ()*scalar;
 
             return new Vector(newX, newY, newZ, name);
         }
@@ -175,15 +185,21 @@ public class Vector {
      * @return new Vector()
      */
     public Vector scalarDivision(Vector a, Double scalar, String name){
+
+        //Code Review
+        if(scalar == 0){
+            throw new ArithmeticException("Der will durch 0 teilen, lol!");
+        }
+
         if(a.getZ().isNaN()){
-            newX = a.getX()/scalar;
-            newY = a.getY()/scalar;
+            double newX = a.getX()/scalar;
+            double newY = a.getY()/scalar;
 
             return new Vector(newX, newY, name);
         } else {
-            newX = a.getX()/scalar;
-            newY = a.getY()/scalar;
-            newZ = a.getZ()/scalar;
+            double newX = a.getX()/scalar;
+            double newY = a.getY()/scalar;
+            double newZ = a.getZ()/scalar;
 
             return new Vector(newX, newY, newZ, name);
         }
@@ -195,7 +211,7 @@ public class Vector {
      * @return Vektorlaenge -> double
      */
     public Double getVectorLength(Vector a){
-        vectorLength = Math.sqrt(Math.pow(a.getX(), 2) + Math.pow(a.getY(), 2) + Math.pow(a.getZ(), 2));
+        double vectorLength = Math.sqrt(Math.pow(a.getX(), 2) + Math.pow(a.getY(), 2) + Math.pow(a.getZ(), 2));
         return vectorLength;
     }
 

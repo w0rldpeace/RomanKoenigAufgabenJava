@@ -24,9 +24,10 @@ public class VectorTest {
         assertEquals(9.0,c.getZ());
     }
 
+    //Aus dem Coderview
     @Test
     public void testSubtraction(){
-        c = a.subtract3dVector(a,b,"Delta");
+        c = Vector.subtract3dVector(a,b,"Delta");
         assertEquals(-3.0,c.getX());
         assertEquals(-3.0,c.getY());
         assertEquals(-3.0,c.getZ());
