@@ -15,17 +15,17 @@ public class CircleTest extends AbstractTestGeometric {
     @Override
     @Test
     public void calculateCircumference() {
-        testCircle = new Circle(testCenterPoint, 2);
+        testCircle = new Circle(testCenterPoint, 4.5);
         double actualCircumference = testCircle.getCircumference();
-        assertEquals(12.56,actualCircumference, 0.01);
+        assertEquals(28.27,actualCircumference, 0.01);
     }
 
     @Override
     @Test
     public void calculateArea() {
-        testCircle = new Circle(testCenterPoint, 2);
+        testCircle = new Circle(testCenterPoint, 4.5);
         double actualArea = testCircle.getArea();
-        assertEquals(12.56,actualArea,0.01);
+        assertEquals(63.61,actualArea,0.01);
 
     }
 }
