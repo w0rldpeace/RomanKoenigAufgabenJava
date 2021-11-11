@@ -3,7 +3,7 @@ package com.geometric;
 import com.point.Point;
 import com.point.Vector;
 
-public class Rectangle extends Point implements GeometricObject {
+public class Rectangle implements GeometricObject {
     /**
      * Formeln fuer die Berechnung des Umfangs und Flaeche von einem Rechteck
      * U = 2*(a+b)
@@ -36,16 +36,16 @@ public class Rectangle extends Point implements GeometricObject {
     }
 
     @Override
-    public double circumferenceRectangle(Rectangle rectangle) {
-        double ab = sideLength(rectangle.subtractCoordinates(b,a,"Seite AB"));
-        double cb = sideLength(rectangle.subtractCoordinates(c,b,"Seite CB"));
+    public double calculateCircumference() {
+        double ab = sideLength(a.subtractCoordinates(b,a,"Seite AB"));
+        double cb = sideLength(a.subtractCoordinates(c,b,"Seite CB"));
         circumference = 2 * (ab + cb);
 
         return circumference;
     }
 
     @Override
-    public double areaRectangle(Rectangle rectangle) {
+    public double calculateArea() {
         Vector directionA;
         Vector directionB;
         double area;
@@ -61,24 +61,4 @@ public class Rectangle extends Point implements GeometricObject {
         return area;
     }
 
-
-    @Override
-    public double circumferenceTriangle(Triangle t) {
-        return 0;
-    }
-    @Override
-    public double circumferenceCircle(Circle c) {
-        return 0;
-    }
-
-    @Override
-    public double areaCircle(Circle c) {
-        return 0;
-    }
-
-
-    @Override
-    public double areaTriangle(Triangle t) {
-        return 0;
-    }
 }

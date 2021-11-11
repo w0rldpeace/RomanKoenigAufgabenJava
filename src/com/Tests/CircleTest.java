@@ -13,8 +13,8 @@ public class CircleTest extends AbstractTestGeometric {
     @Override
     @Test
     public void calculateCircumference() {
-        testCircle = new Circle(testCenterPoint, 2.0);
-        double actualCircumferenceCircle = testCircle.circumferenceCircle(testCircle);
+        testCircle = new Circle(testCenterPoint, 2);
+
     }
 
     @Override

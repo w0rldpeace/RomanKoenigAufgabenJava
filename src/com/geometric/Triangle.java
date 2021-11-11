@@ -43,7 +43,7 @@ public class Triangle implements GeometricObject {
      * A = 1/2*g*h
      */
     @Override
-    public double circumferenceTriangle(Triangle triangle) {
+    public double calculateCircumference() {
 
         double ab = sideLength(a.subtractCoordinates(b,a,"Seite AB"));
         double ca = sideLength(a.subtractCoordinates(c,a,"Seite AC"));
@@ -54,7 +54,7 @@ public class Triangle implements GeometricObject {
     }
 
     @Override
-    public double areaTriangle(Triangle triangle) {
+    public double calculateArea() {
         Vector directionA;
         Vector directionB;
         double area;
@@ -68,22 +68,5 @@ public class Triangle implements GeometricObject {
         area = 0.5 * (directionA.getX() * directionB.getY() - directionA.getY() * directionB.getX());
 
         return area;
-    }
-
-    @Override
-    public double areaCircle(Circle c) {
-        return 0;
-    }
-    @Override
-    public double areaRectangle(Rectangle r) {
-        return 0;
-    }
-    @Override
-    public double circumferenceCircle(Circle c) {
-        return 0;
-    }
-    @Override
-    public double circumferenceRectangle(Rectangle r) {
-        return 0;
     }
 }

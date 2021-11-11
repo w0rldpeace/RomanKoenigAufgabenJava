@@ -19,14 +19,14 @@ public class RectangleTest extends AbstractTestGeometric {
     @Test
     public void calculateCircumference() {
         testRectangle = new Rectangle(p1,p2,p3,p4);
-        double actualCircumferenceRectangle = testRectangle.circumferenceRectangle(testRectangle);
+        double actualCircumferenceRectangle = testRectangle.calculateCircumference();
         assertEquals(20.0,actualCircumferenceRectangle);
     }
 
     @Override
     public void calculateArea() {
         testRectangle = new Rectangle(p1,p2,p3,p4);
-        double actualAreaRectangle = testRectangle.areaRectangle(testRectangle);
+        double actualAreaRectangle = testRectangle.calculateArea();
         assertEquals(28.0,actualAreaRectangle);
     }
 }
