@@ -3,21 +3,17 @@ package com.geometric;
 import com.point.Point;
 import com.point.Vector;
 
-public class Triangle implements GeometricObject {
+public class Triangle extends AbstractGeometricObject{
 
-    private Point a, b, c;
-    private double area, circumference;
-
-    //Pruefe Punkte mit Pythagoras ob es ueberhaupt ein Dreieck ist.
-    public Triangle(){
-
-    }
+    private final Point a, b, c;
 
     public Triangle(Point a, Point b, Point c){
-
+        super();
         this.a = a;
         this.b = b;
         this.c = c;
+        calculateCircumference();
+        calculateArea();
     }
 
     /**
@@ -43,21 +39,19 @@ public class Triangle implements GeometricObject {
      * A = 1/2*g*h
      */
     @Override
-    public double calculateCircumference() {
+    public void calculateCircumference() {
 
         double ab = sideLength(a.subtractCoordinates(b,a,"Seite AB"));
         double ca = sideLength(a.subtractCoordinates(c,a,"Seite AC"));
         double cb = sideLength(a.subtractCoordinates(c,b,"Seite CB"));
-        circumference = ab + ca + cb;
+        setCircumference(ab + ca + cb);
 
-        return circumference;
     }
 
     @Override
-    public double calculateArea() {
+    public void calculateArea() {
         Vector directionA;
         Vector directionB;
-        double area;
 
         Vector v1 = new Vector(a.getX(), a.getY(), "Vektor AB");
         Vector v2 = new Vector(b.getX(), b.getY(), "Vektor AC");
@@ -65,8 +59,6 @@ public class Triangle implements GeometricObject {
 
         directionA = calculateDirectionVector(v2,v1);
         directionB = calculateDirectionVector(v3,v1);
-        area = 0.5 * (directionA.getX() * directionB.getY() - directionA.getY() * directionB.getX());
-
-        return area;
+        setArea(0.5 * (directionA.getX() * directionB.getY() - directionA.getY() * directionB.getX()));
     }
 }

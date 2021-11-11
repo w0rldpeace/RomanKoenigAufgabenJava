@@ -18,7 +18,7 @@ public class TriangleTest extends AbstractTestGeometric {
     @Test
     public void calculateCircumference() {
         testTriangle = new Triangle(p1,p2,p3);
-        double actualCircumferenceTriangle = testTriangle.calculateCircumference();
+        double actualCircumferenceTriangle = testTriangle.getCircumference();
         assertEquals(16.0,actualCircumferenceTriangle, 0.1);
     }
 
@@ -26,7 +26,7 @@ public class TriangleTest extends AbstractTestGeometric {
     @Override
     public void calculateArea() {
         testTriangle = new Triangle(p1,p2,p3);
-        double actualAreaTriangle = testTriangle.calculateArea();
+        double actualAreaTriangle = testTriangle.getArea();
         assertEquals(12,actualAreaTriangle);
     }
 }

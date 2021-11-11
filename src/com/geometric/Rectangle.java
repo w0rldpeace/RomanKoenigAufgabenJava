@@ -3,24 +3,22 @@ package com.geometric;
 import com.point.Point;
 import com.point.Vector;
 
-public class Rectangle implements GeometricObject {
+public class Rectangle extends AbstractGeometricObject implements GeometricObject {
     /**
      * Formeln fuer die Berechnung des Umfangs und Flaeche von einem Rechteck
      * U = 2*(a+b)
      * A = a*b
      */
-    private Point a, b, c, d;
-    private double circumference;
-
-    public Rectangle(){
-
-    }
+    private final Point a, b, c, d;
 
     public Rectangle(Point a, Point b, Point c, Point d){
+        super();
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
+        calculateArea();
+        calculateCircumference();
     }
 
     private double sideLength(Point calculatedPoint){
@@ -36,19 +34,16 @@ public class Rectangle implements GeometricObject {
     }
 
     @Override
-    public double calculateCircumference() {
+    public void calculateCircumference() {
         double ab = sideLength(a.subtractCoordinates(b,a,"Seite AB"));
         double cb = sideLength(a.subtractCoordinates(c,b,"Seite CB"));
-        circumference = 2 * (ab + cb);
-
-        return circumference;
+        setCircumference(2 * (ab + cb));
     }
 
     @Override
-    public double calculateArea() {
+    public void calculateArea() {
         Vector directionA;
         Vector directionB;
-        double area;
 
         Vector v1 = new Vector(a.getX(), a.getY(), "Vektor AB");
         Vector v2 = new Vector(c.getX(), c.getY(), "Vektor AC");
@@ -56,9 +51,7 @@ public class Rectangle implements GeometricObject {
 
         directionA = calculateDirectionVector(v2,v1);
         directionB = calculateDirectionVector(v3,v1);
-        area = directionA.getX() * directionB.getY() - directionA.getY() * directionB.getX();
-
-        return area;
+        setArea(directionA.getX() * directionB.getY() - directionA.getY() * directionB.getX());
     }
 
 }
