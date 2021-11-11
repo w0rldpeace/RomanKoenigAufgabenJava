@@ -7,21 +7,6 @@ public class Vector {
     private Double y;
     private Double z;
     String name;
-    /**
-     * Formel fuer...
-     * Skalarprodukt -> xa*xb+ya*yb+za*zb scalarProduct -> return double
-     * Kreuzprodukt ->
-     *       a2*b3−a3b2
-     *       a3*b1−a1*b3
-     *       a1*b2−a2*b1 -> crossProduct -> return neuer Vektor
-     * Vektorlaenge -> Wurzel aus x^2 + y^2 + z^2 -> vectorLength -> return double
-     *
-     *
-     */
-
-    public Vector(){
-
-    }
 
     /**
      * Konstruktor fuer 3D Vektor

@@ -7,6 +7,12 @@ public class Triangle extends AbstractGeometricObject{
 
     private final Point a, b, c;
 
+    /**
+     * Erstellt ein Dreieck anhand von 3 Punkten, die als Parameter uebergeben werden.
+     * @param a Punkt 1
+     * @param b Punkt 2
+     * @param c Punkt 3
+     */
     public Triangle(Point a, Point b, Point c){
         super();
         this.a = a;
@@ -47,6 +53,7 @@ public class Triangle extends AbstractGeometricObject{
         setCircumference(ab + ca + cb);
 
     }
+
 
     @Override
     public void calculateArea() {

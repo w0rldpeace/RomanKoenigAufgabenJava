@@ -1,13 +1,13 @@
-package com.Tests;
+package com.tests;
 
-import com.geometric.AbstractTestGeometric;
+import com.geometric.AbstractGeometricTest;
 import com.geometric.Triangle;
 import com.point.Point;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TriangleTest extends AbstractTestGeometric {
+public class TriangleTest extends AbstractGeometricTest {
 
     Point p1 = new Point(1.0,2.0,"Punkt A");
     Point p2 = new Point(1.0,8.0,"Punkt B");

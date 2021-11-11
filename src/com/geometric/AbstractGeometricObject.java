@@ -8,19 +8,25 @@ public abstract class AbstractGeometricObject {
     public abstract void calculateArea();
     public abstract void calculateCircumference();
 
+    //Getter
     public double getArea() {
+
         return area;
     }
 
-    public void setArea(double area) {
-        this.area = area;
-    }
-
     public double getCircumference() {
+
         return circumference;
     }
 
+    //Setter
+    public void setArea(double area) {
+
+        this.area = area;
+    }
+
     public void setCircumference(double circumference) {
+
         this.circumference = circumference;
     }
 }

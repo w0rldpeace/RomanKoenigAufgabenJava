@@ -1,4 +1,4 @@
-package com.Tests;
+package com.tests;
 
 import com.point.Vector;
 import org.junit.jupiter.api.Test;
@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VectorTest {
 
+    //Hier felder auf private setzen
     Vector a = new Vector(1.0, 2.0, 3.0, "Alpha");
     Vector b = new Vector(4.0,5.0,6.0,"Bravo");
     Vector d = new Vector(3.0,6.0,9.0, "Doof");
     Vector c;
     Double vectorLength;
     Double scalarProduct;
-    Double crossProduct;
     Double scalar = 1.5;
 
     @Test

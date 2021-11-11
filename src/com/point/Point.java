@@ -6,11 +6,14 @@ public class Point {
     private Double y;
     private String name;
 
-    //Leerer Konstruktor
-    public Point(){
-
-    }
     //Hauptkonstruktor
+
+    /**
+     * Beschreibt ein Objekt vom Typ Point. Stellt einen Punkt im Koordinatensystem dar.
+     * @param x X-Koordinate
+     * @param y Y-Koordinate
+     * @param name Eindeutiger Name des Punkts
+     */
     public Point(Double x, Double y, String name){
         this.x = x;
         this.y = y;
@@ -59,26 +62,32 @@ public class Point {
     }
 
     public double getX() {
+
         return x;
     }
 
     public void setX(double x) {
+
         this.x = x;
     }
 
     public double getY() {
+
         return y;
     }
 
     public void setY(double y) {
+
         this.y = y;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 }

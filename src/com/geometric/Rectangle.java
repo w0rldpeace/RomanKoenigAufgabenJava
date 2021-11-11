@@ -3,14 +3,17 @@ package com.geometric;
 import com.point.Point;
 import com.point.Vector;
 
-public class Rectangle extends AbstractGeometricObject implements GeometricObject {
-    /**
-     * Formeln fuer die Berechnung des Umfangs und Flaeche von einem Rechteck
-     * U = 2*(a+b)
-     * A = a*b
-     */
+public class Rectangle extends AbstractGeometricObject {
+
     private final Point a, b, c, d;
 
+    /**
+     * Dies ist ein Rechteck
+     * @param a Parameter 1
+     * @param b
+     * @param c
+     * @param d
+     */
     public Rectangle(Point a, Point b, Point c, Point d){
         super();
         this.a = a;

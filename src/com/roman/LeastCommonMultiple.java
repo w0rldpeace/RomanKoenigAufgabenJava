@@ -9,8 +9,6 @@ public class LeastCommonMultiple {
     List<Integer> firstList = new ArrayList<>();
     List<Integer> secondList = new ArrayList<>();
     int commonMultiple;
-    int firstNumber;
-    int secondNumber;
 
     public int calculateCommonMultiple(int firstNumber, int secondNumber){
 

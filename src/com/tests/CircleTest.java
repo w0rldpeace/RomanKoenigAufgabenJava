@@ -1,13 +1,13 @@
-package com.Tests;
+package com.tests;
 
-import com.geometric.AbstractTestGeometric;
+import com.geometric.AbstractGeometricTest;
 import com.geometric.Circle;
 import com.point.Point;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CircleTest extends AbstractTestGeometric {
+public class CircleTest extends AbstractGeometricTest {
 
     Point testCenterPoint = new Point(2.0,2.0,"Center Point");
     Circle testCircle;

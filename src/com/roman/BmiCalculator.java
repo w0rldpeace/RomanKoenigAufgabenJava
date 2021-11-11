@@ -7,10 +7,11 @@ public class BmiCalculator {
     public String calc(double height, double weight){
 
         double result;
+
         //Groesse in CM
         double convertedHeight = height/100;
+        //BMI Formel Gewicht / Koerpergroesse in Meter ^ 2
         result = weight / Math.pow(convertedHeight, 2);
-        System.out.println(result);
 
         if(result < 18.5){
             System.out.println("Untergewicht");

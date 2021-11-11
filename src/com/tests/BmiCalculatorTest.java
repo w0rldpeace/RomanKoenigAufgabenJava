@@ -1,4 +1,4 @@
-package com.Tests;
+package com.tests;
 import com.roman.BmiCalculator;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,6 @@ public class BmiCalculatorTest {
 
     BmiCalculator b = new BmiCalculator();
 
-    // Muss statisch sein, wieso?
     @Test
     public void shouldMalnourished(){
         String returnText = b.calc(189, 55);

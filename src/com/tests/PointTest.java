@@ -1,4 +1,4 @@
-package com.Tests;
+package com.tests;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import com.point.Point;
 import org.junit.jupiter.api.Test;
