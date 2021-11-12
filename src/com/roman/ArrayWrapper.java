@@ -1,20 +1,22 @@
 package com.roman;
 
-public class ArrayWrapper {
+import java.util.Arrays;
+
+public class ArrayWrapper<T> {
     private int elementCount;
-    private int[] intArray;
+    private T[] intArray;
 
     public ArrayWrapper(int arrayLength){
         elementCount = 0;
-        intArray = new int[arrayLength];
+        intArray = (T[]) new Object[arrayLength];
     }
 
-    public void add(int number){
+    public void add(T number){
 
         boolean arrayLengthNotSufficient = elementCount >= intArray.length;
 
         if(arrayLengthNotSufficient){
-            int[] newArray = new int[intArray.length*2];
+            T[] newArray = (T[]) new Object[intArray.length*2];
             for(int i = 0; i < intArray.length;i++){
                 newArray[i] = intArray[i];
             }
@@ -24,9 +26,25 @@ public class ArrayWrapper {
         elementCount++;
     }
 
+    public void remove(T removeIndex){
+
+        if(intArray == null || (int) removeIndex < 0 || (int) removeIndex >= intArray.length){
+            System.out.println("Dieses Element kann nicht geloescht werden!");
+        }
+        T[] newArray = (T[]) new Object[intArray.length - 1];
+
+        for(int i = 0, k = 0; i < intArray.length; i++){
+            if(i == (int) removeIndex){
+                continue;
+            }
+            newArray[k++] = intArray[i];
+        }
+        System.out.println("Array nach der Loeschoperation: " + Arrays.toString(newArray));
+
+    }
     public int getElement(int count){
 
-        return intArray[count];
+        return (int) intArray[count];
     }
 
     public int getArraySize(){
