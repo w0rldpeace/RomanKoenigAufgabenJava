@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SnigleLinkedListTest {
     SingleLinkedList<Integer> list;
     ArrayList<Node<Integer>> arrayList;
-
+//
     @BeforeEach
     public void init(){
         arrayList = new ArrayList<>();

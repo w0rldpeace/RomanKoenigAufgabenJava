@@ -58,7 +58,7 @@ public class SingleLinkedList<T> {
         current.setNext(newNode);
 
     }
-    // Iterirere ich so ueber die Liste?
+    // Iterirere ich so ueber die Liste
     public String printList(){
 
         String output;
