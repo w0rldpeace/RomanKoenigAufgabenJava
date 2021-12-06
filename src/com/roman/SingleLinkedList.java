@@ -87,5 +87,23 @@ public class SingleLinkedList<T> {
         }
     }
 
+    public void reverse(){
+
+        Node<T> prev = null;
+        Node<T> current = this.head;
+        Node<T> next = null;
+
+        while(current != null){
+
+            next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+
+        }
+        this.head = prev;
+
+    }
+
 }
 

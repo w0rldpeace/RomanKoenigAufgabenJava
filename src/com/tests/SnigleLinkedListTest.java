@@ -76,4 +76,16 @@ public class SnigleLinkedListTest {
 
         assertEquals("Linked List: 1 2 3 4 ", list.printList());
     }
+
+    @Test
+    public void testReverse(){
+
+        list.reverse();
+        list.traverse(integerNode -> arrayList.add(integerNode));
+
+        assertEquals(4,arrayList.get(0).getData());
+        assertEquals(3,arrayList.get(1).getData());
+        assertEquals(2,arrayList.get(2).getData());
+        assertEquals(1,arrayList.get(3).getData());
+    }
 }
