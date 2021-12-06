@@ -2,7 +2,7 @@ package com.roman;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
 
     private int age;
     private String surname;
@@ -25,6 +25,7 @@ public class Person {
                 getWeight() == person.getWeight() &&
                 getAge() == person.getAge();
     }
+
 
     @Override
     public int hashCode() {
@@ -71,4 +72,31 @@ public class Person {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
+    @Override
+    public int compareTo(Person o) {
+        // mit was ich die person vergleichen / wie?
+        AgeComporator ac = new AgeComporator();
+        HeightComparator hc = new HeightComparator();
+
+        if(ac.compare(this, o) == 0){
+            if(hc.compare(this, o) == 0)
+
+            return 0;
+        }
+        else {
+            return hc.compare(this, o);
+        }
+
+        return ac.compare(this, o);
+    }
+
+//    @Override
+//    public int compareTo(Person o) {
+//        // mit was ich die person vergleichen / wie?
+//
+//        HeightComparator hc = new HeightComparator();
+//
+//        return hc.compare(this, o);
+//    }
 }

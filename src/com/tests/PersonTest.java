@@ -11,8 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonTest {
 
     Person person1 = new Person("Koenig","Roman", 180,82,30);
-    Person person3 = new Person("Koenig","Roman", 180,82,30);
-
+    Person roman = new Person("Koenig","Roman", 180,82,30);
     Person person2 = new Person("Max","Mustermann", 175,80,43);
 
     //Gleiche Person
@@ -46,5 +45,15 @@ public class PersonTest {
 
         assertNotEquals(personToPhone.get(roman).hashCode(), personToPhone.get(roman1).hashCode());
 
+    }
+
+    @Test
+    public void testComporator(){
+
+        Person roman = new Person("Koenig","Roman", 180,82,30);
+        Person person1 = new Person("Koenig","Roman", 180,82,30);
+        Person person2 = new Person("Max","Mustermann", 175,80,43);
+
+        assertEquals(0, roman.compareTo(person1));
     }
 }
