@@ -1,5 +1,7 @@
 package com.roman;
 
+import java.util.Objects;
+
 public class Person {
 
     private int age;
@@ -22,6 +24,12 @@ public class Person {
                 getHeight() == person.getHeight() &&
                 getWeight() == person.getWeight() &&
                 getAge() == person.getAge();
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(age, surname, lastName, height, weight);
     }
 
     public int getAge() {
