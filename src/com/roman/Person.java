@@ -1,12 +1,17 @@
 package com.roman;
 
+import com.csvparser.CSVField;
+
 import java.util.Objects;
 
 public class Person implements Comparable<Person> {
 
-    private int age;
-    private String surname;
+    @CSVField(0)
     private String lastName;
+    @CSVField(1)
+    private String surname;
+    @CSVField(2)
+    private int age;
     private int height;
     private int weight;
 
@@ -90,13 +95,4 @@ public class Person implements Comparable<Person> {
 
         return ac.compare(this, o);
     }
-
-//    @Override
-//    public int compareTo(Person o) {
-//        // mit was ich die person vergleichen / wie?
-//
-//        HeightComparator hc = new HeightComparator();
-//
-//        return hc.compare(this, o);
-//    }
 }
